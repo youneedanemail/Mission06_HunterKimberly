@@ -5,7 +5,7 @@ namespace Mission06_HunterKimberly.Models
 {
     public class Movie
     {
-        [Key]
+        [Key]       // creates primary key
         [Required]
         public int MovieID { get; set; }
         [Required]
@@ -21,7 +21,7 @@ namespace Mission06_HunterKimberly.Models
         public string Rating { get; set; }
         public bool? Edited { get; set; }
         public string? Lent_To { get; set; }
-        [StringLength(25)]
+        [StringLength(25)]  // sets textbox length
         public string? Notes {  get; set; }
 
     }

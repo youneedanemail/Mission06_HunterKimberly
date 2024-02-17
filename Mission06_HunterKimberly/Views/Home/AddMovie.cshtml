@@ -7,6 +7,8 @@
 <div class="text-center">
     <h1 class="display-4">Add a Movie to Joel Hilton's Film Collection</h1>
 </div>
+
+<!--Form to add a new movie to Joel's Database-->
 <form method="post">
     <label asp-for="Category">Category</label>
     <select asp-for="Category">
@@ -24,7 +26,7 @@
     <input asp-for="Title" />
     <br />
     <label asp-for="Year">Year</label>
-    <input asp-for="Year" type="number" min="1888" max="4000" pattern="[0-9]{4}" value="2015" maxlength="4" />
+    <input asp-for="Year" type="number" min="1888" max="4000" pattern="[0-9]{4}" value="2015" maxlength="4" /> <!--Make date range from first movie created to work in forseable future-->
     <br />
     <label asp-for="Director">Director</label>
     <input asp-for="Director" />
@@ -47,7 +49,7 @@
     <input asp-for="Lent_To" />
     <br />
     <label asp-for="Notes">Notes</label>
-    <input asp-for="Notes" maxlength="25"/>
+    <input asp-for="Notes" maxlength="25" />  <!--set max length for text box-->
     <br />
     <button type="submit">Add New Movie</button>
 </form>
