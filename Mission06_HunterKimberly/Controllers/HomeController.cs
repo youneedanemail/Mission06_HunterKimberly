@@ -26,7 +26,7 @@ namespace Mission06_HunterKimberly.Controllers
         [HttpGet]
         public IActionResult AddMovie()
         {
-            ViewBag.Categories = _context.Categories
+            ViewBag.Categories = _context.Categories  // populates viewbag vor category
                 .OrderBy(x => x.CategoryName)
                 .ToList();
 
@@ -40,6 +40,15 @@ namespace Mission06_HunterKimberly.Controllers
             _context.SaveChanges();
 
             return View("SuccessMovieAdd", response);
+        }
+
+        public IActionResult MovieList()
+        {
+            // Link  (sequal language)
+            var movies = _context.Movies
+                .OrderBy(x => x.Title).ToList();
+
+            return View(movies);
         }
 
         // Edit Movie
@@ -62,6 +71,7 @@ namespace Mission06_HunterKimberly.Controllers
             _context.Update(updateInfo);
             _context.SaveChanges();
 
+
             return RedirectToAction("MovieList");
         }
 
@@ -71,6 +81,7 @@ namespace Mission06_HunterKimberly.Controllers
         {
             var recordToDelete = _context.Movies
                 .Single(x => x.MovieId == id);
+
 
             return View(recordToDelete);
         }

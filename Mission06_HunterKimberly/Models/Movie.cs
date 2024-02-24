@@ -9,10 +9,10 @@ namespace Mission06_HunterKimberly.Models
         [Key]                                           // creates primary key
         [Required]
         public int MovieId { get; set; }
-        [ForeignKey("CategoryID")]                      // Creates Foreign Key
+
         public int? CategoryId { get; set; }
-        [Required]
-        public string CategoryName { get; set; }        // do i need this check
+
+        public Category CategoryName { get; set; }        // do i need this check
         [Required]
         public string Title { get; set; }
         [Range(1888,4000)]                              // Start at first movie and anticipate longevity of app
@@ -23,9 +23,9 @@ namespace Mission06_HunterKimberly.Models
         [Required]
         public bool Edited { get; set; }
         public string? LentTo { get; set; }
-        [StringLength(25)]                              // sets textbox length
         [Required]
         public bool CopiedToPlex { get; set; }
+        [StringLength(25)]                              // sets textbox length
         public string? Notes {  get; set; }
 
     }

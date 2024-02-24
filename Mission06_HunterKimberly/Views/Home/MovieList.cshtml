@@ -1,4 +1,4 @@
-﻿
+﻿﻿
 
 @{
     ViewData["Title"] = "Joel Hilton's Film Collection";
@@ -6,10 +6,12 @@
 
 @model List<Movie>
 
+<!--Table to display movies-->
+
 <table class="table table-bordered">
     <thead class="fw-bold">
         <tr>
-            <td>Category</td>
+
             <td>Title</td>
             <td>Year</td>
             <td>Director</td>
@@ -21,11 +23,11 @@
         </tr>
     </thead>
 
-@foreach (var x in Model)
+    @foreach (var x in Model)
     {
         <tbody>
             <tr>
-                <td>@x.CategoryName</td>
+
                 <td>@x.Title</td>
                 <td>@x.Year</td>
                 <td>@x.Director</td>
@@ -34,7 +36,7 @@
                 <td>@x.LentTo</td>
                 <td>@x.CopiedToPlex</td>
                 <td>@x.Notes</td>
-                <td><a class="btn btn-light" asp-controller="Home" asp-action="Edit" asp-route-id="@x.MovieId">Edit</a></td>
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.MovieId">Edit</a></td>
                 <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.MovieId">Delete</a></td>
 
             </tr>

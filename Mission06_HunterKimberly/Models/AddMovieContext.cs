@@ -12,7 +12,7 @@ namespace Mission06_HunterKimberly.Models
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Category> Categories { get; set; }  // add ability to set to Category Table
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)  // movie categories
         {
             modelBuilder.Entity<Category>().HasData(
 
